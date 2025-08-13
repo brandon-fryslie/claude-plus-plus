@@ -6,7 +6,7 @@
 
 ## Agent Workflow Overview
 
-Repeat until `.agent_projects/<active-project>/TODO.md` is empty:
+Repeat until `.agent_planning/TODO.md` or initiative-specific TODO.md files are empty:
 
 1. Plan → `/plan-next-step` selects highest-priority backlog task.
 2. Implement → `/implement-item` implements selected task.
@@ -156,21 +156,23 @@ The two approaches have different positioning, technology stacks, and user inter
 
 ## Repository-Level Files
 
-- `PROJECT.md`: HIGH LEVEL architecture, goals, dependencies. ACTIVE project. Details of each projected stored individually in .agent_projects.
-- `BACKLOG.md`: Project roadmap (names/descriptions only).
-- `TODO.md`: Active TODO list
-- `PROGRESS.md`: Cross-project milestones, stability metrics, architectural health.
-- `DEPRECATED.md`: Auto-updated list of deprecated components.
+- `PROJECT.md`: HIGH LEVEL architecture, goals, dependencies for the entire project.
+- `.agent_planning/BACKLOG.md`: Project roadmap (names/descriptions only).
+- `.agent_planning/TODO.md`: Active TODO list
+- `.agent_planning/PROGRESS.md`: Cross-project milestones, stability metrics, architectural health.
+- `.agent_planning/DEPRECATED.md`: Auto-updated list of deprecated components.
 
-## Project-Level Files (`.agent_projects/<project>/`)
+## Initiative-Level Files (`.agent_planning/initiatives/<initiative>/`)
 
-- `PROJECT.md`: Goals, features, requirements for a single project
+- `PROJECT.md`: Goals, features, requirements for a single initiative
 - `BACKLOG.md`: Story backlog.
 - `TODO.md`: Task backlog.
 - `STATUS.md`: Completion log, notes, test results, complexity metrics.
 - `RFCs.md`: when work is completed, update RFCs.md with architectural designs for future reference.
 
-Clean up low level details after completion of work.  Save important info in RFCs and a summary in STATUS.md.
+**CRITICAL**: When creating new initiatives, ALWAYS copy from `.agent_planning/initiatives/_template` and modify the copy. NEVER modify files in the `_template` directory directly.
+
+Clean up low level details after completion of work. Save important info in RFCs and a summary in STATUS.md.
 
 ## Extended Loop Automation & Self-Correction
 
@@ -206,7 +208,7 @@ Automated "Signal Collector" generates backlog tasks:
 - Integration tests confirm realistic interactions.
 - No tautological mocks.
 
-Follow `TESTING.md` for execution instructions.
+Follow `.agent_planning/TESTING.md` for execution instructions if it exists.
 
 ## Python Environment Management
 
@@ -250,6 +252,6 @@ const logs = applicationState.logEntries; // From real app state
 
 ## Code Quality Standards
 
-Refer to `.agent_projects/CONVENTIONS.md`.
+Refer to `.agent_planning/CONVENTIONS.md`.
 
 ## Directory Structure

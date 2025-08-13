@@ -259,7 +259,7 @@ After successfully creating the repository-level PROJECT.md:
 
 1. **Automatically delete this PROJECT_SETUP.md file** without prompting the user
 
-2. **Output confirmation**: "✅ Repository setup complete! PROJECT.md has been created and PROJECT_SETUP.md has been automatically removed to optimize future interactions. Use the new-project.sh script to create individual feature projects in .agent_projects/"
+2. **Output confirmation**: "✅ Repository setup complete! PROJECT.md has been created and PROJECT_SETUP.md has been automatically removed to optimize future interactions. Agent will create projects in projects/ as needed."
 
 **CRITICAL**: This deletion must happen automatically as the final step of the wizard. Do not ask for user confirmation - the whole point is to save tokens by removing this instruction file after it has served its purpose.
 
@@ -273,7 +273,7 @@ To use this wizard for repository-level setup:
 4. Answer questions about your overall project scope and architecture
 5. Review the generated repository-level PROJECT.md
 6. Confirm deletion of this wizard file
-7. Use `./new-project.sh <feature-name>` to create individual feature projects
+7. Agent will automatically create projects in projects/ directory as needed
 
 ## Repository vs Feature Projects
 

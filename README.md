@@ -5,6 +5,7 @@ A comprehensive template system for configuring Claude Code as an autonomous dev
 ## What This Provides
 
 - **CLAUDE.md Template**: Complete agent workflow configuration for Claude Code
+  - Note: because we use Claude on this repo, we CLAUDE_TEMPLATE.md is what we copy into the repos we're setting up
 - **Project Structure Templates**: Organized file hierarchy for multi-project management  
 - **Setup Scripts**: Automated tools to quickly configure new projects
 - **Requirements Analysis**: Protocols to prevent implementation misalignment
@@ -31,7 +32,7 @@ cd /path/to/your/project
 ### Create Sub-Projects
 ```bash
 # Create a new feature/component project
-./new-project.sh my-feature-name
+# Agent will create project structures automatically
 ```
 
 ## Files Overview
@@ -52,7 +53,6 @@ cd /path/to/your/project
 
 ### Setup Scripts
 - **`claudew.sh`**: Claude wrapper that auto-configures projects and launches Claude Code
-- **`new-project.sh`**: Creates new sub-project from templates
 
 ## How It Works
 
@@ -96,7 +96,7 @@ cd ~/my-web-app
 
 ### Adding a New Feature
 ```bash
-./new-project.sh user-authentication
+# Agent will create projects in projects/ as needed
 # Edit .agent_projects/user-authentication/PROJECT.md
 # Add stories to .agent_projects/user-authentication/BACKLOG.md
 ```
