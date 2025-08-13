@@ -11,17 +11,21 @@ A comprehensive template system for configuring Claude Code as an autonomous dev
 
 ## Quick Start
 
-### Setup New Project
+### Setup and Launch Claude
 ```bash
 # Clone this repository
 git clone <repository-url> claude-config
 cd claude-config
 
-# Set up Claude configuration in your project
-./setup-claude-config.sh /path/to/your/project
+# Launch Claude with automatic project configuration
+./claudew.sh
 
-# Or set up in current directory
-./setup-claude-config.sh
+# Or configure a specific project directory
+cd /path/to/your/project
+/path/to/claude-config/claudew.sh
+
+# Include project setup wizard
+./claudew.sh --wizard
 ```
 
 ### Create Sub-Projects
@@ -47,7 +51,7 @@ cd claude-config
 - **`.agent_projects/CONVENTIONS.md`**: Code style and technical conventions
 
 ### Setup Scripts
-- **`setup-claude-config.sh`**: Initializes Claude configuration in a project
+- **`claudew.sh`**: Claude wrapper that auto-configures projects and launches Claude Code
 - **`new-project.sh`**: Creates new sub-project from templates
 
 ## How It Works
@@ -84,10 +88,10 @@ Organize complex software projects with:
 
 ### Setting Up a New Web App
 ```bash
-./setup-claude-config.sh ~/my-web-app
 cd ~/my-web-app
-# Edit PROJECT.md to describe your web app goals
-# Start Claude Code - it will automatically use CLAUDE.md
+/path/to/claude-config/claudew.sh --wizard
+# Answer wizard questions to generate PROJECT.md
+# Claude Code launches automatically with full configuration
 ```
 
 ### Adding a New Feature
@@ -98,11 +102,12 @@ cd ~/my-web-app
 ```
 
 ### Working with Claude
-With CLAUDE.md in place, Claude Code will:
-- Automatically follow the workflow loops
-- Systematically work through your backlogs
-- Detect and resolve requirements conflicts
-- Maintain project documentation and progress tracking
+The `claudew.sh` wrapper provides:
+- **Automatic detection**: Identifies unconfigured projects and offers setup
+- **Smart configuration**: Only installs missing components, preserves existing setup
+- **Seamless launch**: Configures then immediately launches Claude Code
+- **Enhanced workflows**: Claude automatically follows structured development loops
+- **Requirements analysis**: Built-in conflict detection prevents implementation misalignment
 
 ## Repository Contents
 

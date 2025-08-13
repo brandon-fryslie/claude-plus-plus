@@ -1,0 +1,1 @@
+Update `.ai_project/<project>/STATUS.md` with test results and completed tasks. If the project is complete, update the repository-level `TODO.md` (clearing the project name) and `PROGRESS.md`. Output the updated STATUS.md.
