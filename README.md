@@ -12,6 +12,8 @@ A comprehensive template system for configuring Claude Code as an autonomous dev
 
 ## Quick Start
 
+This repo includes a simple claude wrapper that will install all dependencies.
+
 ### Setup and Launch Claude
 ```bash
 # Clone this repository
